@@ -5,6 +5,7 @@ const Navbar = () => {
   const navOptions = (
     <>
       <NavLink
+        title='Home'
         to="/"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-3" : "mr-3"
@@ -13,6 +14,7 @@ const Navbar = () => {
         <li>HOME</li>
       </NavLink>
       <NavLink
+        title='Contact Us'
         to="/contactus"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-3" : "mr-3"
@@ -21,6 +23,7 @@ const Navbar = () => {
         <li>CONTACT US</li>
       </NavLink>
       <NavLink
+      title='Dashboard'
         to="/dashboard"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-3" : "mr-3"
@@ -29,6 +32,7 @@ const Navbar = () => {
         <li>DASHBOARD</li>
       </NavLink>
       <NavLink
+      title='Our Menu'
         to="/ourmenu"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-3" : "mr-3"
@@ -37,6 +41,7 @@ const Navbar = () => {
         <li>OUR MENU</li>
       </NavLink>
       <NavLink
+      title='Our Shop'
         to="/ourshop"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-3" : "mr-3"
