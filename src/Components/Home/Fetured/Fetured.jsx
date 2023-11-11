@@ -11,7 +11,7 @@ const Fetured = () => {
             ></SectionTitle>
           </div>
       <div
-        className="hero min-h-screen w-[1280px] h-[750px]"
+        className="hero min-h-screen w-[1280px] h-[750px] bg-fixed"
         style={{
           backgroundImage: `url(${img1})`,
         }}
@@ -29,6 +29,7 @@ const Fetured = () => {
                 quasi. Eaque repellat recusandae ad laudantium tempore
                 consequatur consequuntur omnis ullam maxime tenetur.
               </p>
+              <button className="border-b-4 border-l-0 border-r-0 border-t-0 hover:bg-[#CD9003] btn btn-outline mt-12 text-white font-semibold text-xl">Read more</button>
             </div>
           </div>
         </div>
