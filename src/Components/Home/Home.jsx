@@ -5,6 +5,7 @@ import ChefRecommend from "./CHEFRECOMMENDS/ChefRecommend";
 import ContuctUs from "./ContuctUs/ContuctUs";
 import Fetured from "./Fetured/Fetured";
 import OrderSlider from "./OrderOnlineSlider/OrderSlider";
+import TESTIMONIALS from "./TESTIMONIALS/TESTIMONIALS";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
            <ContuctUs></ContuctUs>
            <ChefRecommend></ChefRecommend>
            <Fetured></Fetured>
+           <TESTIMONIALS></TESTIMONIALS>
         </div>
     );
 };

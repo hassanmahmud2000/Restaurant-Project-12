@@ -8,8 +8,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 const ChefRecommend = () => {
-  const data = useHook();
-  console.log(data);
+  const {data} = useHook();
   const [recommend, setRecommend] = useState([]);
   useEffect(() => {
     let recommendItem = data.filter((item) => item.category === "salad");
