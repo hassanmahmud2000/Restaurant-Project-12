@@ -7,13 +7,13 @@ const useHook = () => {
         fetch('menu.json')
             .then(res=>res.json())
             .then(data=>setData(data))
-    },[data])
+    },[])
 
     useEffect(()=>{
         fetch('review.json')
             .then(res=>res.json())
             .then(data=>setReview(data))
-    },[data])
+    },[])
 
     return {data,review};
 };

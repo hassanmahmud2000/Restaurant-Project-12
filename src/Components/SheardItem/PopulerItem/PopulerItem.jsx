@@ -12,7 +12,6 @@ const PopulerItem = () => {
         .then(data=> {
             let populerItem = data.filter(item=> item.category === 'popular')
             setMenu(populerItem)
-            console.log(populerItem);
         })
     },[])
     return (

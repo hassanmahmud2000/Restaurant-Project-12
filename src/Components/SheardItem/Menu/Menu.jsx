@@ -11,7 +11,7 @@ const Menu = ({ item }) => {
           className="w-[130px] rounded-r-full rounded-b-full"
         />
         <div className="ml-3 text-[#737373]">
-          <h2 className="text-xl font-normal">{name}  ....................................</h2>
+          <h2 className="text-xl font-normal mb-1">{name}  ....................................</h2>
           <p className="text-base font-normal">{recipe}</p>
         </div>
       </div>

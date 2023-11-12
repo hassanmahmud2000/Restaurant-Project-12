@@ -35,7 +35,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
       title='Our Menu'
-        to="/ourmenu"
+        to="/menu"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
         }

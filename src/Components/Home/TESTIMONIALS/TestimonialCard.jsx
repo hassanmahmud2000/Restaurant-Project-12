@@ -2,7 +2,6 @@ import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 
 const TestimonialCard = ({ item }) => {
-  console.log(item);
   return (
     <div className="text-center mb-20 mt-12">
       <Stack spacing={1} className="ml-[550px] my-6">

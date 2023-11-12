@@ -10,7 +10,6 @@ import TestimonialCard from "./TestimonialCard";
 const TESTIMONIALS = () => {
   const {review} = useHook();
 
-  console.log(review);
   return (
     <div className="my-14">
       <SectionTitle

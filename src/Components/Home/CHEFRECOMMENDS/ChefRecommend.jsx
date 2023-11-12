@@ -34,7 +34,7 @@ const ChefRecommend = () => {
         >
             <div>
             {recommend.map((item) => (
-                 <SwiperSlide><RecommendCard key={item._id} item={item}></RecommendCard></SwiperSlide>
+                 <SwiperSlide key={item._id}><RecommendCard key={item._id} item={item}></RecommendCard></SwiperSlide>
               ))}
             </div>
               
