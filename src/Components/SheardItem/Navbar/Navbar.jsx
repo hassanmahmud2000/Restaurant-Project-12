@@ -51,6 +51,15 @@ const Navbar = () => {
       >
         <div className='flex justify-center items-center'><li>OUR SHOP</li> <img src={icon} alt="" className='w-[55px] h-[43px]'/></div>
       </NavLink>
+      <NavLink
+      title='Sign Up'
+        to="/signup"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
+        }
+      >
+        <div className='flex justify-center items-center'><li>Sign Up</li></div>
+      </NavLink>
     </>
   );
   return (
@@ -86,10 +95,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu font-semibold justify-center items-center menu-horizontal px-1 text-white">{navOptions}</ul>
-        <button className='flex gap-2 justify-center items-center'>
+        {/* <button className='flex gap-2 justify-center items-center'>
           <p className='text-white font-medium'>SIGN OUT</p>
           <BiSolidUserCircle className='text-4xl text-white mr-2'></BiSolidUserCircle>
-        </button>
+        </button> */}
       </div>
       
     </div>

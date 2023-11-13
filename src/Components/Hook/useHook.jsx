@@ -4,13 +4,13 @@ const useHook = () => {
     const[data,setData] =useState([]);
     const[review,setReview] =useState([]);
     useEffect(()=>{
-        fetch('menu.json')
+        fetch('http://localhost:5000/menu')
             .then(res=>res.json())
             .then(data=>setData(data))
     },[])
 
     useEffect(()=>{
-        fetch('review.json')
+        fetch('http://localhost:5000/review')
             .then(res=>res.json())
             .then(data=>setReview(data))
     },[])

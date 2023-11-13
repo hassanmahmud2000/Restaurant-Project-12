@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useHook from "../Hook/useHook";
 import OrderCart from "./OrderCart/OrderCart";
+import { Helmet } from "react-helmet-async";
 
 const Order = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -16,6 +17,9 @@ const Order = () => {
   const drinks = data.filter((item) => item.category === "drinks");
   return (
     <div>
+      <Helmet>
+        <title>Bistro Boss | Order now</title>
+      </Helmet>
       {/* Cover Image */}
       <Cover
         img={coverImg}
@@ -31,7 +35,7 @@ const Order = () => {
           <Tab>desserts</Tab>
           <Tab>drinks</Tab>
         </TabList>
-        <TabPanel >
+        <TabPanel>
           <div className="grid grid-cols-4 gap-3 mb-16">
             {salad.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
@@ -39,28 +43,28 @@ const Order = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-4 gap-3 mb-16">
             {pizza.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-4 gap-3 mb-16">
             {soup.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-4 gap-3 mb-16">
             {dessert.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-4 gap-3 mb-16">
             {drinks.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
