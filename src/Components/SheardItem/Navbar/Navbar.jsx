@@ -2,8 +2,23 @@ import { MdOutlineFastfood } from 'react-icons/md';
 import { Link, NavLink } from "react-router-dom";
 import icon from '../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png'
 import { BiSolidUserCircle } from 'react-icons/bi';
+import { useContext } from 'react';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+  const {user ,SignOut} = useContext(AuthContext);
+  console.log(user);
+
+  const signOutHendler=()=>{
+    SignOut()
+      .then(result=>{
+        console.log(result);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+  }
+
   const navOptions = (
     <>
       <NavLink
@@ -51,7 +66,7 @@ const Navbar = () => {
       >
         <div className='flex justify-center items-center'><li>OUR SHOP</li> <img src={icon} alt="" className='w-[55px] h-[43px]'/></div>
       </NavLink>
-      <NavLink
+      {user ? "" : <NavLink
       title='Sign Up'
         to="/signup"
         className={({ isActive, isPending }) =>
@@ -59,7 +74,7 @@ const Navbar = () => {
         }
       >
         <div className='flex justify-center items-center'><li>Sign Up</li></div>
-      </NavLink>
+      </NavLink>}
     </>
   );
   return (
@@ -95,10 +110,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu font-semibold justify-center items-center menu-horizontal px-1 text-white">{navOptions}</ul>
-        {/* <button className='flex gap-2 justify-center items-center'>
+        {user && <button onClick={signOutHendler} className='flex gap-2 justify-center items-center'>
           <p className='text-white font-medium'>SIGN OUT</p>
-          <BiSolidUserCircle className='text-4xl text-white mr-2'></BiSolidUserCircle>
-        </button> */}
+        </button>}
       </div>
       
     </div>

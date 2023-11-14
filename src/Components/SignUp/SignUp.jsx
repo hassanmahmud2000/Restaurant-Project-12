@@ -7,10 +7,14 @@ import {
   LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../SheardItem/AuthProvider/AuthProvider";
 
 const SignUp = () => {
-    useEffect(()=>{
+  const {createUser , user} = useContext(AuthContext)
+  console.log(user);
+
+  useEffect(()=>{
         loadCaptchaEnginge(6);
     },[])
     
@@ -22,6 +26,14 @@ const SignUp = () => {
       const password = form.password.value;
       const user = { name, email, password };
       console.log(user);
+
+      createUser(email,password)
+        .then(result=>{
+          console.log(result);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
     };
   return (
     <div className="flex justify-between items-center">

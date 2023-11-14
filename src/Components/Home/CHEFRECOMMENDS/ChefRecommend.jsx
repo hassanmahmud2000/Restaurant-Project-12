@@ -13,7 +13,7 @@ const ChefRecommend = () => {
   useEffect(() => {
     let recommendItem = data.filter((item) => item.category === "salad");
     setRecommend(recommendItem);
-  }, [recommend]);
+  }, []);
 
   return (
     <section>

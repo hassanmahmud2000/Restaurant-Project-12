@@ -26,7 +26,7 @@ const TESTIMONIALS = () => {
           className="mySwiper"
         >
           {review.map((rev) => (
-            <SwiperSlide>
+            <SwiperSlide key={rev._id}>
               <TestimonialCard key={rev._id} item={rev}></TestimonialCard>
             </SwiperSlide>
           ))}
