@@ -1,29 +1,30 @@
-import { MdOutlineFastfood } from 'react-icons/md';
+import { MdOutlineFastfood } from "react-icons/md";
 import { Link, NavLink, Navigate } from "react-router-dom";
-import icon from '../../../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png'
-import { BiSolidUserCircle } from 'react-icons/bi';
-import { useContext } from 'react';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FaShoppingCart } from "react-icons/fa";
+// import { BiSolidUserCircle } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import useCart from "../../Hook/useCart";
 
 const Navbar = () => {
-  const {user ,SignOut} = useContext(AuthContext);
+  const { user, SignOut } = useContext(AuthContext);
+  const [cart] = useCart()
 
-  const signOutHendler =()=>{
+  const signOutHendler = () => {
     SignOut()
-      .then(result=>{
+      .then((result) => {
         console.log(result);
         window.location.reload();
       })
-      .catch(err=>{
+      .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
-  
   const navOptions = (
     <>
       <NavLink
-        title='Home'
+        title="Home"
         to="/"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
@@ -32,7 +33,7 @@ const Navbar = () => {
         <li>HOME</li>
       </NavLink>
       <NavLink
-        title='Contact Us'
+        title="Contact Us"
         to="/contactus"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
@@ -41,7 +42,7 @@ const Navbar = () => {
         <li>CONTACT US</li>
       </NavLink>
       <NavLink
-      title='Dashboard'
+        title="Dashboard"
         to="/dashboard"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
@@ -50,7 +51,7 @@ const Navbar = () => {
         <li>DASHBOARD</li>
       </NavLink>
       <NavLink
-      title='Our Menu'
+        title="Our Menu"
         to="/menu"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
@@ -59,23 +60,20 @@ const Navbar = () => {
         <li>OUR MENU</li>
       </NavLink>
       <NavLink
-      title='Our Shop'
+        title="Our Shop"
         to="/ourshop"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
         }
       >
-        <div className='flex justify-center items-center'><li>OUR SHOP</li> <img src={icon} alt="" className='w-[55px] h-[43px]'/></div>
+        Our Shop
       </NavLink>
-      {/* {user ? "" : <NavLink
-      title='Sign Up'
-        to="/signup"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
-        }
-      >
-        <div className='flex justify-center items-center'><li>Sign Up</li></div>
-      </NavLink>} */}
+      <Link to='/'>
+        <button className="btn btn-ghost">
+          <FaShoppingCart className="text-xl"></FaShoppingCart>
+          <div className="badge badge-secondary">+{cart.length}</div>
+        </button>
+      </Link>
     </>
   );
   return (
@@ -105,25 +103,40 @@ const Navbar = () => {
             {navOptions}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case font-bold text-white text-3xl">
-          Bistro <br /><span className="text-yellow-500">Restaurant</span> <MdOutlineFastfood></MdOutlineFastfood>
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case font-bold text-white text-3xl"
+        >
+          Bistro <br />
+          <span className="text-yellow-500">Restaurant</span>{" "}
+          <MdOutlineFastfood></MdOutlineFastfood>
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu font-semibold justify-center items-center menu-horizontal px-1 text-white">{navOptions}</ul>
-        {user ? <button onClick={signOutHendler}  className='flex gap-2 justify-center items-center'>
-          <p className='text-white font-medium'>SIGN OUT</p>
-        </button> : <NavLink
-      title='Sign Up'
-        to="/signup"
-        className={({ isActive, isPending }) =>
-          isPending ? "pending " : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
-        }
-      >
-        <div className='flex justify-center items-center text-white font-medium'><li>Sign Up</li></div>
-      </NavLink>}
+        <ul className="menu font-semibold justify-center items-center menu-horizontal px-1 text-white">
+          {navOptions}
+        </ul>
+        {user ? (
+          <button
+            onClick={signOutHendler}
+            className="flex gap-2 justify-center items-center"
+          >
+            <p className="text-white font-medium">SIGN OUT</p>
+          </button>
+        ) : (
+          <NavLink
+            title="Sign Up"
+            to="/signup"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending " : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
+            }
+          >
+            <div className="flex justify-center items-center text-white font-medium">
+              <li>Sign Up</li>
+            </div>
+          </NavLink>
+        )}
       </div>
-      
     </div>
   );
 };

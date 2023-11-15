@@ -36,23 +36,23 @@ const SignUp = () => {
 
     createUser(email, password)
       .then((result) => {
-        profileInfo(name,photo)
-         .then(()=>{
-          Swal.fire({
-            title: "Successfully SignUp!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
-         })
-         .catch((err)=>{console.log(err)})
         console.log(result);
-        navigate(from, { replace: true });
+        profileInfo (name, photo)
+          .then(() => {
+            Swal.fire({
+              title: "Successfully SignUp!",
+              text: "You clicked the button!",
+              icon: "success",
+            });
+            navigate(from, { replace: true });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
       });
-    
-      
   };
 
   const GoogleHandler = () => {
@@ -88,7 +88,7 @@ const SignUp = () => {
               size="lg"
               name="name"
               placeholder="name"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 shadow-inner"
+              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 px-2 shadow-inner"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -99,8 +99,8 @@ const SignUp = () => {
             <Input
               size="lg"
               name="photo"
-              placeholder="name"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 shadow-inner"
+              placeholder="Photo URL"
+              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 px-2 shadow-inner"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -114,7 +114,7 @@ const SignUp = () => {
               type="email"
               required
               placeholder="name@mail.com"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 shadow-inner"
+              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 px-2 shadow-inner"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -127,7 +127,7 @@ const SignUp = () => {
               name="password"
               size="lg"
               placeholder="********"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 shadow-inner"
+              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 px-2 shadow-inner"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -140,7 +140,7 @@ const SignUp = () => {
               name="Type "
               size="lg"
               placeholder="Type The Upper Code"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 shadow-inner"
+              className=" !border-t-blue-gray-200 focus:!border-t-gray-900 px-2 shadow-inner"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
