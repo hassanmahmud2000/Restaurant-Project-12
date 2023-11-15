@@ -7,6 +7,7 @@ import OurMenu from "../Components/OurMenuSection/OurMenu/OurMenu";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Order from "../Components/Order/Order";
 import SignUp from "../Components/SignUp/SignUp";
+import PrivateRoute from "../Components/SheardItem/PrivateRoute/PrivateRoute";
 
 export  const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ export  const router = createBrowserRouter([
         },
         {
           path:'/ourshop',
-          element:<Order></Order>
+          element:<PrivateRoute><Order></Order></PrivateRoute>
         },
         {
           path:'/signup',
