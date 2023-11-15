@@ -17,6 +17,7 @@ const OrderCart = ({ item }) => {
       console.log(user, user.email);
       const cartItem = {
         menuId: food._id,
+        name:food.name,
         email: user.email,
         image: food.image,
         price: food.price,

@@ -41,7 +41,7 @@ const Navbar = () => {
       >
         <li>CONTACT US</li>
       </NavLink>
-      <NavLink
+      {/* <NavLink
         title="Dashboard"
         to="/dashboard"
         className={({ isActive, isPending }) =>
@@ -49,7 +49,7 @@ const Navbar = () => {
         }
       >
         <li>DASHBOARD</li>
-      </NavLink>
+      </NavLink> */}
       <NavLink
         title="Our Menu"
         to="/menu"
@@ -68,7 +68,7 @@ const Navbar = () => {
       >
         Our Shop
       </NavLink>
-      <Link to='/'>
+      <Link to='/dashboard/cart'>
         <button className="btn btn-ghost">
           <FaShoppingCart className="text-xl"></FaShoppingCart>
           <div className="badge badge-secondary">+{cart.length}</div>

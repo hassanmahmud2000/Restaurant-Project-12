@@ -8,6 +8,8 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Order from "../Components/Order/Order";
 import SignUp from "../Components/SignUp/SignUp";
 import PrivateRoute from "../Components/SheardItem/PrivateRoute/PrivateRoute";
+import Desboard from "../Components/Desboard/Desboard";
+import Cart from "../Components/Desboard/Cart/Cart";
 
 export  const router = createBrowserRouter([
     {
@@ -33,4 +35,14 @@ export  const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:'/dashboard',
+      element:<Desboard></Desboard>,
+      children:[
+        {
+          path:'/dashboard/cart',
+          element:<Cart></Cart>
+        }
+      ]
+    }
   ]);
