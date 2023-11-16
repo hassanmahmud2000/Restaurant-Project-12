@@ -10,6 +10,7 @@ import SignUp from "../Components/SignUp/SignUp";
 import PrivateRoute from "../Components/SheardItem/PrivateRoute/PrivateRoute";
 import Desboard from "../Components/Desboard/Desboard";
 import Cart from "../Components/Desboard/Cart/Cart";
+import AllUsers from './../Components/Desboard/AllUsers/AllUsers';
 
 export  const router = createBrowserRouter([
     {
@@ -37,11 +38,15 @@ export  const router = createBrowserRouter([
     },
     {
       path:'/dashboard',
-      element:<Desboard></Desboard>,
+      element:<PrivateRoute><Desboard></Desboard></PrivateRoute>,
       children:[
         {
           path:'/dashboard/cart',
           element:<Cart></Cart>
+        },
+        {
+          path:'/dashboard/allusers',
+          element:<AllUsers></AllUsers>
         }
       ]
     }

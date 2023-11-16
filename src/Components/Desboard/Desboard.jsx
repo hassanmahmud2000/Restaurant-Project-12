@@ -3,12 +3,13 @@ import { Outlet } from "react-router-dom";
 import DeashBoardNavbar from "./DeshboardNavbar/DeashBoardNavbar";
 
 const Desboard = () => {
+  const isAdmin = true;
   return (
-    <div className="flex mt-12">
+    <div className="flex mt-6">
       <div>
         <DeashBoardNavbar></DeashBoardNavbar>
       </div>
-      <div className="flex-1 ml-12 mb-14">
+      <div className="flex-1 ml-12">
         <Outlet></Outlet>
       </div>
     </div>

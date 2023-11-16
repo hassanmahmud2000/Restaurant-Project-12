@@ -5,10 +5,13 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../SheardItem/AuthProvider/AuthProvider";
+import useAxiosSecure from "../../Hook/AxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
-  const [cart,refetch] = useCart();
-  const {user} = useContext(AuthContext)
+  const [cart, refetch] = useCart();
+  const axiosSecure = useAxiosSecure();
+  const { user } = useContext(AuthContext);
   console.log(cart);
   const totalPrice = cart.reduce(
     (accumulator, items) => accumulator + items.price,
@@ -18,36 +21,36 @@ const Cart = () => {
   const deleteHandler = (id) => {
     console.log(id);
     Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
-        if (result.isConfirmed) {
-            fetch(`http://localhost:5000/carts/${id}`,{
-                method:"DELETE"
-            })
-            .then(res=>{
-                if(res.data.deletedCount >0){
-                    refetch();
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                      });
-                }
-            })
-        }
-      });
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/carts/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
   };
   return (
     <div>
+      <Helmet>
+      <title>Bistro Boss | Dashboard/cart</title>
+      </Helmet>
       <SectionTitle
-        heder="MANAGE ALL ITEMS"
-        subHeader="---Hurry Up!---"
+        heder="WANNA ADD MORE?"
+        subHeader="---My Cart---"
       ></SectionTitle>
       <div className="flex items-center justify-evenly">
         <h2 className="text-5xl font-semibold">Items: {cart.length}</h2>

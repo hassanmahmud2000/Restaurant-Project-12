@@ -68,7 +68,7 @@ const Navbar = () => {
       >
         Our Shop
       </NavLink>
-      <Link to='/dashboard/cart'>
+      <Link to='/dashboard'>
         <button className="btn btn-ghost">
           <FaShoppingCart className="text-xl"></FaShoppingCart>
           <div className="badge badge-secondary">+{cart.length}</div>

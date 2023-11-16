@@ -11,10 +11,12 @@ import {
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../SheardItem/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import AxiosPublic from "../Hook/AxiosPublic";
 
 const SignUp = () => {
   const { createUser, user, GoogleSignUp, profileInfo } =
-    useContext(AuthContext);
+  useContext(AuthContext);
+  const axiosPublic = AxiosPublic()
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -37,14 +39,25 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result);
-        profileInfo (name, photo)
+        profileInfo(name, photo)
           .then(() => {
-            Swal.fire({
-              title: "Successfully SignUp!",
-              text: "You clicked the button!",
-              icon: "success",
-            });
-            navigate(from, { replace: true });
+            const userInfo = {
+                name : name,
+                email: email
+            }
+            axiosPublic.post('/users', userInfo)
+              .then(res=>{
+                if(res.data.insertedId){
+                  console.log('user added in DB');
+                  Swal.fire({
+                    title: "Successfully SignUp!",
+                    text: "You clicked the button!",
+                    icon: "success",
+                  });
+                  navigate(from, { replace: true });
+                }
+              })
+            
           })
           .catch((err) => {
             console.log(err);
@@ -59,7 +72,22 @@ const SignUp = () => {
     GoogleSignUp()
       .then((result) => {
         console.log(result.user);
-        navigate(from, { replace: true });
+          const userData ={
+            name: result.user?.name,
+            email: result.user?.email,
+          }
+        axiosPublic.post('/users',userData)
+        .then(res=>{
+          if(res.data.insertedId){
+            console.log('user added in DB');
+            Swal.fire({
+              title: "Successfully SignUp!",
+              text: "You clicked the button!",
+              icon: "success",
+            });
+            navigate('/');
+          }
+        })
       })
       .catch((err) => {
         console.log(err);
