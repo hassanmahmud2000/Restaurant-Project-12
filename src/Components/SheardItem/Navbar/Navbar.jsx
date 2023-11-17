@@ -5,16 +5,19 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import useCart from "../../Hook/useCart";
+import useAdmin from "../../Hook/useAdmin";
 
 const Navbar = () => {
   const { user, SignOut } = useContext(AuthContext);
   const [cart] = useCart()
+  const [admin] = useAdmin()
 
   const signOutHendler = () => {
     SignOut()
       .then((result) => {
         console.log(result);
-        window.location.reload();
+        
+        // window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -68,12 +71,19 @@ const Navbar = () => {
       >
         Our Shop
       </NavLink>
-      <Link to='/dashboard'>
+      {
+        admin ? <Link to='/dashboard/allusers'>
+        <button className="btn btn-ghost">
+          <FaShoppingCart className="text-xl"></FaShoppingCart>
+          <div className="badge badge-secondary">+{cart.length}</div>
+        </button>
+      </Link> : <Link to='/dashboard/cart'>
         <button className="btn btn-ghost">
           <FaShoppingCart className="text-xl"></FaShoppingCart>
           <div className="badge badge-secondary">+{cart.length}</div>
         </button>
       </Link>
+      }
     </>
   );
   return (

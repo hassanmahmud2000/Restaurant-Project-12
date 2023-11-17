@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../SheardItem/AuthProvider/AuthProvider";
 import useAxiosSecure from "../../Hook/AxiosSecure";
 import { Helmet } from "react-helmet-async";
+import { CgAdd } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -46,7 +48,7 @@ const Cart = () => {
   return (
     <div>
       <Helmet>
-      <title>Bistro Boss | Dashboard/cart</title>
+        <title>Bistro Boss | Dashboard/cart</title>
       </Helmet>
       <SectionTitle
         heder="WANNA ADD MORE?"
@@ -106,6 +108,12 @@ const Cart = () => {
               ))}
             </tbody>
           </table>
+          <Link to='/ourshop'>
+            <button className="btn btn-outline my-6 w-full">
+              <CgAdd className=" font-medium text-xl hover:text-white"></CgAdd>{" "}
+              More Food
+            </button>
+          </Link>
         </div>
       </div>
     </div>

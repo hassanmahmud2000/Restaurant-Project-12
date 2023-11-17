@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-
 import {
   FaAlignJustify,
   FaBookmark,
@@ -9,13 +8,27 @@ import {
   FaShoppingBag,
   FaShoppingCart,
   FaUsers,
+  FaBell,
 } from "react-icons/fa";
 import { Button } from "antd";
 import { MdEmail, MdRestaurantMenu, MdReviews } from "react-icons/md";
 import { TfiMenuAlt } from "react-icons/tfi";
+import useAxiosSecure from "../../Hook/AxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import useAdmin from "../../Hook/useAdmin";
 
 const DeashBoardNavbar = () => {
-  const isAdmin = true;
+  const axiosSecure = useAxiosSecure();
+  const [isAdmin] = useAdmin();
+
+  const { data: users = [], refetch } = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/users");
+      refetch();
+      return res.data;
+    },
+  });
   return (
     <div className="w-64 bg-[#D1A054] min-h-[90vh] mb-14">
       <ul>
@@ -102,7 +115,9 @@ const DeashBoardNavbar = () => {
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
-                  <FaUsers className="p-2 text-4xl"></FaUsers> all users
+                  <FaUsers className="p-2 text-4xl"></FaUsers> all Users
+                  <div className="badge badge-success gap-2 z-10 shadow-md
+                  "><FaBell className="text-yellow-300"></FaBell> {users.length}</div>
                 </NavLink>
               </Button>
             </li>

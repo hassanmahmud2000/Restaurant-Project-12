@@ -48,7 +48,7 @@ const AuthProvider = ({children}) => {
                 // Do Something
                 localStorage.removeItem('AccessToken')
             }
-    },[auth])})
+    },[auth , axiosPublic])})
 
     const authInfo ={
         createUser,

@@ -73,7 +73,7 @@ const SignUp = () => {
       .then((result) => {
         console.log(result.user);
           const userData ={
-            name: result.user?.name,
+            name: result.user?.displayName,
             email: result.user?.email,
           }
         axiosPublic.post('/users',userData)
@@ -85,7 +85,7 @@ const SignUp = () => {
               text: "You clicked the button!",
               icon: "success",
             });
-            navigate('/');
+            navigate(from, { replace: true });
           }
         })
       })
