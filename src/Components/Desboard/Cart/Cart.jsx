@@ -56,7 +56,7 @@ const Cart = () => {
       ></SectionTitle>
       <div className="flex items-center justify-evenly">
         <h2 className="text-5xl font-semibold">Items: {cart.length}</h2>
-        <h2 className="text-5xl font-semibold">Total Price: {totalPrice}</h2>
+        <h2 className="text-5xl font-semibold">Total Price: ${totalPrice}</h2>
         <button className="btn btn-outline px-20 text-lg">Pay</button>
       </div>
       <div>

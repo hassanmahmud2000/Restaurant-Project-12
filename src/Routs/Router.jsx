@@ -11,6 +11,8 @@ import PrivateRoute from "../Components/SheardItem/PrivateRoute/PrivateRoute";
 import Desboard from "../Components/Desboard/Desboard";
 import Cart from "../Components/Desboard/Cart/Cart";
 import AllUsers from './../Components/Desboard/AllUsers/AllUsers';
+import AddItems from "../Components/Desboard/DeshboardNavbar/AddItems/AddItems";
+import AdminRoutes from "../Components/SheardItem/AdminSite/AdminRoutes";
 
 export  const router = createBrowserRouter([
     {
@@ -40,13 +42,19 @@ export  const router = createBrowserRouter([
       path:'/dashboard',
       element:<PrivateRoute><Desboard></Desboard></PrivateRoute>,
       children:[
+        // For Normal Users
         {
           path:'/dashboard/cart',
           element:<Cart></Cart>
         },
+        // For Admin
         {
           path:'/dashboard/allusers',
-          element:<AllUsers></AllUsers>
+          element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+        },
+        {
+          path:'/dashboard/additems',
+          element:<AdminRoutes><AddItems></AddItems></AdminRoutes>
         }
       ]
     }

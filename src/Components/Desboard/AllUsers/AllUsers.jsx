@@ -5,8 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { FaUsers } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Swal from "sweetalert2";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const AllUsers = () => {
   const axiosSecure = useAxiosSecure();
@@ -92,7 +92,9 @@ const AllUsers = () => {
                   <th>{index + 1}</th>
 
                   <td>
-                    <p className="text-lg font-semibold">{user.name ||  <Skeleton count={10} />}</p>
+                    <p className="text-lg font-semibold">
+                      {user.name || <Skeleton count={10} />}
+                    </p>
                   </td>
                   <td>{user.email || <Skeleton count={10} />}</td>
                   <th>
@@ -111,12 +113,12 @@ const AllUsers = () => {
                     {/* {user.role === "Admin" ? (
                       ""
                     ) : ( */}
-                      <button
-                        onClick={() => deleteUserHandler(user._id)}
-                        className="btn bg-red-600"
-                      >
-                        <RiDeleteBin5Line className="text-xl text-white hover:text-red-600"></RiDeleteBin5Line>
-                      </button>
+                    <button
+                      onClick={() => deleteUserHandler(user._id)}
+                      className="btn bg-red-600"
+                    >
+                      <RiDeleteBin5Line className="text-xl text-white hover:text-red-600"></RiDeleteBin5Line>
+                    </button>
                     {/* )} */}
                   </th>
                 </tr>
