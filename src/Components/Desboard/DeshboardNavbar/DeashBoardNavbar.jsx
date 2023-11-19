@@ -30,7 +30,7 @@ const DeashBoardNavbar = () => {
     },
   });
   return (
-    <div className="w-64 bg-[#D1A054] min-h-[90vh] mb-14">
+    <div className="w-64 bg-[#D1A054] min-h-[90vh] sticky z-10">
       <ul>
         {isAdmin ? (
           <>

@@ -4,12 +4,16 @@ import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import AxiosPublic from "../../../Hook/AxiosPublic";
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../../Hook/AxiosSecure";
+import Swal from "sweetalert2";
 
 const AddItems = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit ,reset} = useForm();
   const axiosPublic = AxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const IMG_API_Hosting_Key = import.meta.env.VITE_API_KEY;
   const Hosting_Api = `https://api.imgbb.com/1/upload?key=${IMG_API_Hosting_Key}`;
+
   const onSubmit = async (data) => {
     console.log(data);
     const imageFile = { image: data.photo[0] };
@@ -18,7 +22,26 @@ const AddItems = () => {
         "content-type": "multipart/form-data",
       },
     });
-    console.log(res.data);
+    if (res.data.success) {
+      const menuItem ={
+        name:data.recipeName,
+        category: data.category,
+        recipe: data.recipeDetails,
+        image: res.data.data.display_url,
+        price: parseFloat(data.price)
+      }
+      const menuRes = await axiosSecure.post('/menu', menuItem )
+        console.log(menuRes.data);
+        if(menuRes.data.insertedId){
+          reset();
+          Swal.fire({
+            title: `${data.name} Added in Menu `,
+            text: "Good Job!",
+            icon: "success"
+          });
+        
+        }
+    }
   };
   return (
     <div>
@@ -41,15 +64,18 @@ const AddItems = () => {
           />
           {/* Drop Down Select */}
           <div className="flex gap-4 mt-6">
-            <select {...register('category')} className="select select-bordered w-full max-w-xs">
+            <select
+              {...register("category")}
+              className="select select-bordered w-full max-w-xs"
+            >
               {/* <option >
                 Select The Category?
               </option> */}
-              <option>SALAD</option>
-              <option>PIZZA</option>
-              <option>SOUP</option>
-              <option>DESSERT</option>
-              <option>DRINKS</option>
+              <option>salad</option>
+              <option>pizza</option>
+              <option>soup</option>
+              <option>dessert</option>
+              <option>drinks</option>
             </select>
             <Input
               size="lg"

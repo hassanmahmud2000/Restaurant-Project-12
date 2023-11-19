@@ -69,7 +69,7 @@ const Navbar = () => {
           isPending ? "pending" : isActive ? "text-[#EEFF25] mr-4" : "mr-4"
         }
       >
-        Our Shop
+        ORDER NOW
       </NavLink>
       {
         admin ? <Link to='/dashboard/allusers'>

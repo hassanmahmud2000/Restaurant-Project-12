@@ -32,9 +32,9 @@ const ChefRecommend = () => {
           modules={[Pagination]}
           className="mySwiper"
         >
-            <div>
+            <div className="">
             {recommend.map((item) => (
-                 <SwiperSlide key={item._id}><RecommendCard key={item._id} item={item}></RecommendCard></SwiperSlide>
+                 <SwiperSlide className="ml-3" key={item._id}><RecommendCard key={item._id} item={item}></RecommendCard></SwiperSlide>
               ))}
             </div>
               

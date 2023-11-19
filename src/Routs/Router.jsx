@@ -13,6 +13,7 @@ import Cart from "../Components/Desboard/Cart/Cart";
 import AllUsers from './../Components/Desboard/AllUsers/AllUsers';
 import AddItems from "../Components/Desboard/DeshboardNavbar/AddItems/AddItems";
 import AdminRoutes from "../Components/SheardItem/AdminSite/AdminRoutes";
+import ManageItems from "../Components/Desboard/DeshboardNavbar/ManageItems/ManageItems";
 
 export  const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ export  const router = createBrowserRouter([
         {
           path:'/dashboard/allusers',
           element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+        },
+        {
+          path:'/dashboard/items',
+          element:<AdminRoutes><ManageItems></ManageItems></AdminRoutes>
         },
         {
           path:'/dashboard/additems',

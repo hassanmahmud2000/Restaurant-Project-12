@@ -6,7 +6,7 @@ const Desboard = () => {
   const isAdmin = true;
   return (
     <div className="flex mt-6">
-      <div>
+      <div className="">
         <DeashBoardNavbar></DeashBoardNavbar>
       </div>
       <div className="flex-1 ml-12">

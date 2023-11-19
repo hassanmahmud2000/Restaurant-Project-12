@@ -28,7 +28,7 @@ const Order = () => {
       ></Cover>
       {/* Tabs */}
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList className="uppercase ml-[480px] my-16">
+        <TabList className="uppercase ml-[400px] my-16">
           <Tab>Salad</Tab>
           <Tab>pizza</Tab>
           <Tab>Soups</Tab>
@@ -36,35 +36,35 @@ const Order = () => {
           <Tab>drinks</Tab>
         </TabList>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-3 gap-3 mb-16">
             {salad.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-3 gap-3 mb-16">
             {pizza.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-3 gap-3 mb-16">
             {soup.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-3 gap-3 mb-16">
             {dessert.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3 mb-16">
+          <div className="grid grid-cols-3 gap-3 mb-16">
             {drinks.map((item) => (
               <OrderCart key={item._id} item={item}></OrderCart>
             ))}
