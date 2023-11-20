@@ -1,13 +1,18 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
+import AxiosPublic from './AxiosPublic';
 
 const useHook = () => {
     const[data,setData] =useState([]);
+    const axiosPublic = AxiosPublic()
     const[review,setReview] =useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:5000/menu')
-            .then(res=>res.json())
-            .then(data=>setData(data))
-    },[])
+    const {data:menu , isLoading:loading ,refetch} = useQuery({
+        queryKey:['menuItem'],
+        queryFn: async ()=>{
+            const res = await axiosPublic('/menu')
+            setData(res.data)
+        }
+    })
 
     useEffect(()=>{
         fetch('http://localhost:5000/review')
@@ -15,7 +20,7 @@ const useHook = () => {
             .then(data=>setReview(data))
     },[])
 
-    return {data,review};
+    return {data,review ,loading , refetch};
 };
 
 export default useHook;

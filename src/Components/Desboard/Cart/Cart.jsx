@@ -57,7 +57,11 @@ const Cart = () => {
       <div className="flex items-center justify-evenly">
         <h2 className="text-5xl font-semibold">Items: {cart.length}</h2>
         <h2 className="text-5xl font-semibold">Total Price: ${totalPrice}</h2>
-        <button className="btn btn-outline px-20 text-lg">Pay</button>
+        {
+          cart.length ? <Link to='/dashboard/payment'>
+          <button disabled={!cart.length} className="btn btn-outline px-20 text-lg">Pay</button>
+        </Link> : <button disabled className="btn btn-outline px-20 text-lg">Pay</button>
+        }
       </div>
       <div>
         <div className="overflow-x-auto mt-6">
@@ -108,7 +112,7 @@ const Cart = () => {
               ))}
             </tbody>
           </table>
-          <Link to='/ourshop'>
+          <Link to="/ourshop">
             <button className="btn btn-outline my-6 w-full">
               <CgAdd className=" font-medium text-xl hover:text-white"></CgAdd>{" "}
               More Food

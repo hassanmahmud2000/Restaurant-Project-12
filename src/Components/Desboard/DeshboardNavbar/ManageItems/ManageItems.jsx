@@ -4,9 +4,10 @@ import SectionTitle from "../../../SheardItem/SectionTitle/SectionTitle";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import useAxiosSecure from "../../../Hook/AxiosSecure";
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-  const { data } = useHook();
+  const { data, refetch, loading } = useHook();
   const axiosSecure = useAxiosSecure();
   console.log(data);
 
@@ -25,6 +26,7 @@ const ManageItems = () => {
         const res = await axiosSecure.delete(`/menu/${id}`);
         console.log(res.data);
         if (res.data.deletedCount > 0) {
+          refetch();
           Swal.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
@@ -73,9 +75,14 @@ const ManageItems = () => {
                   <td>{item.name}</td>
                   <td>{item.price} </td>
                   <th>
-                    <button className="btn bg-[#D1A054] hover:bg-green-400">
-                      <FaRegEdit className="text-xl"></FaRegEdit>
-                    </button>
+                    <Link to={`/dashboard/update/${item._id}`}>
+                      <button
+                        // onClick={}
+                        className="btn bg-[#D1A054] hover:bg-green-400"
+                      >
+                        <FaRegEdit className="text-xl"></FaRegEdit>
+                      </button>
+                    </Link>
                   </th>
                   <th>
                     <button

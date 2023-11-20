@@ -42,7 +42,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -59,7 +59,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -77,7 +77,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -94,7 +94,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -111,7 +111,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -132,7 +132,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -149,7 +149,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -166,7 +166,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -184,7 +184,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -201,7 +201,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -217,7 +217,7 @@ const DeashBoardNavbar = () => {
                     isPending
                       ? "pending"
                       : isActive
-                      ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                      ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                       : "flex p-2 items-center justify-start text-xl font-medium uppercase"
                   }
                 >
@@ -238,7 +238,7 @@ const DeashBoardNavbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                  ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                   : "flex p-2 items-center justify-start text-xl font-medium uppercase"
               }
             >
@@ -254,7 +254,7 @@ const DeashBoardNavbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                  ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                   : "flex p-2 items-center justify-start text-xl font-medium uppercase"
               }
             >
@@ -270,7 +270,7 @@ const DeashBoardNavbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                  ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                   : "flex p-2 items-center justify-start text-xl font-medium uppercase"
               }
             >
@@ -286,7 +286,7 @@ const DeashBoardNavbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-white bg-sky-100 px-16 rounded-lg flex items-center justify-center "
+                  ? "text-white bg-blue-200 px-16 rounded-lg flex items-center justify-center "
                   : "flex p-2 items-center justify-start text-xl font-medium uppercase"
               }
             >

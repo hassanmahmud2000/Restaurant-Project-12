@@ -14,6 +14,8 @@ import AllUsers from './../Components/Desboard/AllUsers/AllUsers';
 import AddItems from "../Components/Desboard/DeshboardNavbar/AddItems/AddItems";
 import AdminRoutes from "../Components/SheardItem/AdminSite/AdminRoutes";
 import ManageItems from "../Components/Desboard/DeshboardNavbar/ManageItems/ManageItems";
+import UpdateItem from "../Components/Desboard/UpdateItem/UpdateItem";
+import Payment from "../Components/Desboard/DeshboardNavbar/Payment/Payment";
 
 export  const router = createBrowserRouter([
     {
@@ -48,6 +50,10 @@ export  const router = createBrowserRouter([
           path:'/dashboard/cart',
           element:<Cart></Cart>
         },
+        {
+          path:'/dashboard/payment',
+          element:<Payment></Payment>
+        },
         // For Admin
         {
           path:'/dashboard/allusers',
@@ -60,6 +66,11 @@ export  const router = createBrowserRouter([
         {
           path:'/dashboard/additems',
           element:<AdminRoutes><AddItems></AddItems></AdminRoutes>
+        },
+        {
+          path:'/dashboard/update/:id',
+          element:<AdminRoutes><UpdateItem></UpdateItem></AdminRoutes>,
+          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
         }
       ]
     }

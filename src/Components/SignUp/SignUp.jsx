@@ -85,7 +85,7 @@ const SignUp = () => {
               text: "You clicked the button!",
               icon: "success",
             });
-            navigate(from, { replace: true });
+            navigate('/');
           }
         })
       })
