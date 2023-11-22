@@ -70,7 +70,7 @@ const AllUsers = () => {
         subHeader="---How many??---"
       ></SectionTitle>
       <div className="flex">
-        <h2 className="text-5xl font-bold mb-2">Items: {users.length}</h2>
+        <h2 className="text-5xl font-bold mb-2">Users: {users.length}</h2>
       </div>
       <div>
         <div className="overflow-x-auto ">
@@ -119,7 +119,6 @@ const AllUsers = () => {
                     >
                       <RiDeleteBin5Line className="text-xl text-white hover:text-red-600"></RiDeleteBin5Line>
                     </button>
-                    {/* )} */}
                   </th>
                 </tr>
               ))}
