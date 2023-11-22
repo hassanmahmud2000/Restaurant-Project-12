@@ -16,6 +16,7 @@ import AdminRoutes from "../Components/SheardItem/AdminSite/AdminRoutes";
 import ManageItems from "../Components/Desboard/DeshboardNavbar/ManageItems/ManageItems";
 import UpdateItem from "../Components/Desboard/UpdateItem/UpdateItem";
 import Payment from "../Components/Desboard/DeshboardNavbar/Payment/Payment";
+import PaymentHistory from "../Components/Desboard/PaymentHistory/PaymentHistory";
 
 export  const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export  const router = createBrowserRouter([
         {
           path:'/dashboard/payment',
           element:<Payment></Payment>
+        },
+        {
+          path:'/dashboard/paymentHistory',
+          element:<PaymentHistory></PaymentHistory>
         },
         // For Admin
         {
