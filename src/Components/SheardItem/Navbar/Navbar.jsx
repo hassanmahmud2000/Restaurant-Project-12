@@ -72,12 +72,12 @@ const Navbar = () => {
         ORDER NOW
       </NavLink>
       {
-        admin ? <Link to='/dashboard/allusers'>
+        admin ? <Link to='/dashboard/adminHome'>
         <button className="btn btn-ghost">
           <FaShoppingCart className="text-xl"></FaShoppingCart>
           <div className="badge badge-secondary">+{cart.length}</div>
         </button>
-      </Link> : <Link to='/dashboard/cart'>
+      </Link> : <Link to='/dashboard/userHome'>
         <button className="btn btn-ghost">
           <FaShoppingCart className="text-xl"></FaShoppingCart>
           <div className="badge badge-secondary">+{cart.length}</div>

@@ -17,6 +17,8 @@ import ManageItems from "../Components/Desboard/DeshboardNavbar/ManageItems/Mana
 import UpdateItem from "../Components/Desboard/UpdateItem/UpdateItem";
 import Payment from "../Components/Desboard/DeshboardNavbar/Payment/Payment";
 import PaymentHistory from "../Components/Desboard/PaymentHistory/PaymentHistory";
+import AdminHome from "../Components/Desboard/AdminHome/AdminHome";
+import UserHome from "../Components/Desboard/UserHome/UserHome";
 
 export  const router = createBrowserRouter([
     {
@@ -48,6 +50,10 @@ export  const router = createBrowserRouter([
       children:[
         // For Normal Users
         {
+          path:'/dashboard/userHome',
+          element:<UserHome></UserHome>
+        },
+        {
           path:'/dashboard/cart',
           element:<Cart></Cart>
         },
@@ -60,6 +66,10 @@ export  const router = createBrowserRouter([
           element:<PaymentHistory></PaymentHistory>
         },
         // For Admin
+        {
+          path:'/dashboard/adminHome',
+          element:<AdminHome></AdminHome>
+        },
         {
           path:'/dashboard/allusers',
           element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>

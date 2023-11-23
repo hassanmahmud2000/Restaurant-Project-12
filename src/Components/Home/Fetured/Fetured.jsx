@@ -11,7 +11,7 @@ const Fetured = () => {
             ></SectionTitle>
           </div>
       <div
-        className="hero min-h-screen w-[1180px] h-[750px] bg-fixed"
+        className="hero min-h-screen w-[1280px] h-[750px] bg-fixed"
         style={{
           backgroundImage: `url(${img1})`,
         }}

@@ -37,7 +37,7 @@ const DeashBoardNavbar = () => {
             <li>
               <Button className="btn btn-ghost btn-wide">
                 <NavLink
-                  to="/dashboard/adminhome"
+                  to="/dashboard/adminHome"
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
@@ -127,7 +127,7 @@ const DeashBoardNavbar = () => {
             <li>
               <Button className="btn btn-ghost btn-wide">
                 <NavLink
-                  to="/dashboard/userhome"
+                  to="/dashboard/userHome"
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
